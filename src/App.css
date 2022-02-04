@@ -27,7 +27,15 @@
 .App-link {
   color: #61dafb;
 }
-
+body{
+  
+  
+  background-image: url("/images/leaves.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  }
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
