@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+
+import React from 'react';
 import './App.css';
 
-function App() {
+const CurrentDate = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      { /* Change code below this line */ }
+      <p>The current date is: {props.date} </p>
+      
+      { /* Change code above this line */ }
     </div>
   );
-}
+};
 
-export default App;
+class Calendar extends React.Component {
+  constructor(props) {
+    super(props);
+    
+  }
+  render() {
+    const dd = new Date();
+    return (
+      <div>
+        <h3>What date is it?</h3>
+        { /* Change code below this line */ }
+        
+        <CurrentDate date={dd.toLocaleString()} />
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+
+export default Calendar;
