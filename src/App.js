@@ -11,7 +11,7 @@ const generateSparkle = color => {
     id: String(random(10000, 99999)),
     createdAt: Date.now(),
     color,
-    size: random(11, 19),
+    size: random(9, 15),
     style: {
       top: random(5, window.innerHeight-100) + 'px',
       left: random(100, window.innerWidth-100) + 'px',
@@ -21,7 +21,7 @@ const generateSparkle = color => {
 };
 const Sparkles = ({ color = DEFAULT_COLOR, children, ...delegated }) => {
   const [sparkles, setSparkles] = React.useState(() => {
-    return range(3).map(() => generateSparkle(color));
+    return range(4).map(() => generateSparkle(color));
   });
   
   useRandomizeMove(
@@ -79,11 +79,9 @@ const spin = keyframes`
   0% {
     transform: rotate(0deg);
   }
-  50% {
-    transform: rotate(45deg);
-  }
+
   100% {
-    transform: rotate(100deg);
+    transform: rotate(180deg);
   }
 `;
 const Wrapper = styled.span`
@@ -94,7 +92,7 @@ const SparkleWrapper = styled.span`
   position: absolute;
   display: block;
   @media (prefers-reduced-motion: no-preference) {
-    animation: ${comeInOut} 700ms forwards;
+    animation: ${comeInOut} 1200ms forwards;
   }
 `;
 const SparkleSvg = styled.svg`
