@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Metal&family=Nanum+Gothic:wght@400;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+
+.nav--logo_text, .nav--title, .nav--social {
+    margin: 0.3vw;
+    
+}
+.spaced {
+    
+    
+    letter-spacing: .1em;}
+.elegantshadow {
+    
+    
+    letter-spacing: .05em;
+    text-shadow: 
+       1px -1px 0 #6b3110, 
+      -1px 2px 1px #13483E
+  }
+.nav--logo_text {
+    margin-right: auto;
+    
+    color: #BAA89B;
+    font-weight: 800;
+    font-size: 2.1rem;
+    font-family: 'Poppins', sans-serif;
+    
+}
+.MuiToolbar-root{
+    margin-top: 0.7vw;
+    
+}
+.MuiBox-root, .grid0{
+    margin-left: 2vw;
+}
+
+.nav--subtitle {
+    
+    color: #F88D13;
+    margin: 0.01vw;
+    font-size: 1rem;
+    font-family: 'Nanum Gothic', sans-serif;
+    
+    font-weight: 600;    
+}
+
+.nav--title {
+    color: #4A4A4A;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+.nav--icon {
+    height: 3vw;
+    margin-right: 0.4vw;
+    
+}
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .grid {
+    display: grid;
+    justify-items: right;
+    grid-template-rows: 47px 47px;
+    
+  }
+
+
+
+
+ .searchgroup .main {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.searchgroup h1 {
+    margin: 10px;
+    font-size: 40px;
+    color: rgb(1, 1, 59);
+}
+
+.searchgroup .search {
+    width: 30%;
+}
+
+.searchgroup ul li {
+    font-size: 20px;
+} 
