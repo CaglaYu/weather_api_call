@@ -293,12 +293,12 @@ class Sparkle extends React.Component {
 Sparkle.defaultProps = {
   // The color of the sparkles. Can be a color, an array of colors,
   // or 'random' (which will randomly pick from all hex colors).
-  color: '#F88D13',
+  color: '#BAA89B',
   // The number of sparkles to render. A large number could slow
   // down the page.
   count: 50,
   // The minimum and maximum diameter of sparkles, in pixels.
-  minSize: 5,
+  minSize: 6,
   maxSize: 8,
   // The number of pixels the sparkles should extend beyond the
   // bounds of the parent element.
@@ -308,7 +308,7 @@ Sparkle.defaultProps = {
   // with 0 never fading sparkles out and 1000 immediately
   // removing sparkles. Most meaningful speeds are between
   // 0 and 150.
-  fadeOutSpeed: 50,
+  fadeOutSpeed: 20,
   // Whether we should create an entirely new sparkle when one
   // fades out. If false, we'll just reset the opacity, keeping
   // all other attributes of the sparkle the same.

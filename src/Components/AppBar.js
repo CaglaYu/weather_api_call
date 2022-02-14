@@ -16,12 +16,12 @@ import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import {SocialIcon}  from 'react-social-icons';
-import { Link } from "react-router-dom";
+import { Route, BrowserRouter, Routes, NavLink } from "react-router-dom";
 import './nav.css';
 import { makeStyles } from "@mui/styles";
 
 const pages = ['Today', 'Hot Topics', 'Categories'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Login', 'Account', 'Dashboard', 'Logout'];
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -90,18 +90,20 @@ const ResponsiveAppBar = () => {
     addButton: {
       
       "&:hover": {
-        color: "#f88d13"
-      }
+        color: "#f88d13",
+        background: '#15584C',
+      },
     },
     addIcon: {
       "&:hover": {
-        color: "#f88d13"
-      }
+        color: "#f88d13",
+        background: '#15584C',
+      },
     }
   });
   const classes = useStyles();
   return (
-    <AppBar position="static"  style={{ background: '#21222A' }}>
+    <AppBar position="static"  style={{ background: '#17181C' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -110,7 +112,7 @@ const ResponsiveAppBar = () => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
             onClick={handleHome}
-            component={Link} to={"/"}
+            component={NavLink} to={"/"}
             style={{ textDecoration: 'none' }}
           >
             <img src={myLogo}  className="nav--icon"/>
@@ -151,12 +153,16 @@ const ResponsiveAppBar = () => {
               }}
             >
               {pages.map((page) => (
+                <NavLink to={"/" + page} key={page}  style={{ textDecoration: 'none',color: '#15584C'  }} >
+                 
                 <MenuItem key={page} onClick={handleCloseNavMenu}  
-                style={{ color: '#13483E' }}
+                
                 className={classes.addIcon} 
+               
+               
                 >
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
+                  <Typography key={page} textAlign="center">{page}</Typography>
+                </MenuItem>  </NavLink>
               ))}
             </Menu>
           </Box>
@@ -165,7 +171,7 @@ const ResponsiveAppBar = () => {
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-            component={Link} to={"/"} 
+            component={NavLink} to={"/"} 
             style={{ textDecoration: 'none' }}
         
           >
@@ -177,21 +183,29 @@ const ResponsiveAppBar = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
+              <NavLink to={"/" + page} key={page}  style={{ textDecoration: 'none',color: '#15584C'  }} >
+              
               <Button
                 key={page}
+                sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+                
+                
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: '#BAA89B', display: 'block',fontFamily: 'Nanum Gothic',fontWeight: 600,fontSize:"1rem"   }}
+                sx={{ my: 2, color: '#BAA89B', textDecoration: 'none', display: 'block',fontFamily: 'Nanum Gothic',fontWeight: 600,fontSize:"1rem"   }}
                 className={classes.addButton} 
               >
                 {page}
               </Button>
+              </NavLink>
             ))}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+             
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+              
               </IconButton>
             </Tooltip>
             <Menu
@@ -211,15 +225,17 @@ const ResponsiveAppBar = () => {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
+                 <NavLink to={"/"+setting} key={setting}  style={{ textDecoration: 'none',color: '#15584C'  }} >
+                 
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
+                  <Typography key={setting} textAlign="center">{setting}</Typography>
+                </MenuItem></NavLink>
               ))}
             </Menu>
           </Box>
           <div className='grid0'>
 								<SocialIcon className="nav--social" url="https://twitter.com/jaketrent" 
-								style={{ height: 28, width: 28 }} bgColor="#f88d13" />
+								style={{ height: 28, width: 28 }} bgColor="#f88d13"  />
 								<SocialIcon className="nav--social" url="https://facebook.com/jaketrent" 
 								style={{ height: 28, width: 28 }}  bgColor="#f88d13" />
 								<SocialIcon className="nav--social" url="https://instagram.com/jaketrent" 
@@ -227,13 +243,14 @@ const ResponsiveAppBar = () => {
 								<SocialIcon className="nav--social" url="https://youtube.com/jaketrent" 
 								style={{ height: 28, width: 28 }}  bgColor="#f88d13" />															
 					</div>	
-          <Search style={{ backgroundColor: '#21222A',
-          border:'0.1em solid #13483E'}} >
+          <Search style={{ backgroundColor: '#17181C', color: '#BAA89B',
+          border:'0.1em solid #15584C'}} >
             <SearchIconWrapper>
-              <SearchIcon style={{ color: '#13483E'}} />
+              <SearchIcon style={{ color: '#15584C'}} />
             </SearchIconWrapper>
             <StyledInputBase
-               
+              
+              
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
             />

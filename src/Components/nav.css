@@ -6,6 +6,10 @@
     margin: 0.3vw;
     
 }
+.link {
+    text-decoration: 'none';
+   
+  }
 .spaced {
     
     
@@ -16,7 +20,7 @@
     letter-spacing: .05em;
     text-shadow: 
        1px -1px 0 #6b3110, 
-      -1px 2px 1px #13483E
+      -1px 2px 1px #15584C
   }
 .nav--logo_text {
     margin-right: auto;
@@ -37,12 +41,13 @@
 
 .nav--subtitle {
     
-    color: #F88D13;
+    color: #15584C;
     margin: 0.01vw;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-family: 'Nanum Gothic', sans-serif;
     
-    font-weight: 600;    
+    font-weight: 900;    
+    margin-right: 0.2em;
 }
 
 .nav--title {
