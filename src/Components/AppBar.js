@@ -89,7 +89,6 @@ const ResponsiveAppBar = () => {
   };
   const useStyles = makeStyles({
     addButton: {
-      
       "&:hover": {
         color: "#f88d13",
         background: '#15584C',
@@ -164,6 +163,7 @@ const ResponsiveAppBar = () => {
                         component={RouterLink} to={"/" + page}
                         onClick={handleCloseNavMenu}  
                         className={classes.addIcon} 
+                        
                         >
                           <Typography key={page} textAlign="center">{page}</Typography>
                         </MenuItem>  
@@ -197,7 +197,7 @@ const ResponsiveAppBar = () => {
                         component={RouterLink} to={"/" + page}
                         sx={{ my: 2, color: '#BAA89B', textDecoration: 'none', display: 'block',fontFamily: 'Nanum Gothic',fontWeight: 600,fontSize:"1rem"   }}
                         className={classes.addButton} 
-                        style={{ textDecoration: 'none',color: '#15584C'  }}
+                        
                       >
                         {page}
                       </Button>
