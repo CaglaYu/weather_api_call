@@ -67,10 +67,15 @@
   .grid {
     display: grid;
     justify-items: right;
-    grid-template-rows: 47px 47px;
+    grid-template-rows: 2em 1.5em;
     
   }
-
+  .grid1 {
+    display: grid;
+    justify-items: right;
+    grid-template-columns: 3em 19em;
+    
+  }
 
 
 

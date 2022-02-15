@@ -272,7 +272,7 @@ class Sparkle extends React.Component {
         }}
         style={{
           width: '90%',
-          height: '99%',
+          height: '9%',
           overflow: 'visible',
           position: 'absolute',
           top: `-${overflowPx}px`,

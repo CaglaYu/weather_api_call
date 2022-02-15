@@ -1,18 +1,22 @@
 import React from 'react';
-import Main  from './Components/Main';
 import Footer  from './Components/Footer';
-import Login from './Components/Login';
+import { Routes, Route } from "react-router-dom";
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import ResponsiveAppBar from './Components/AppBar';
-import { Route, Routes } from "react-router-dom";
+import Login from './Components/Login';
+import Home from './Components/Home';
+
 
 
 export default function App() {
   return (
       <div >
-          <ResponsiveAppBar />
-          <Main />
+          <ResponsiveAppBar/>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="login" element={<Login />} />
+          </Routes>
           <Footer/>
          
       </div>
