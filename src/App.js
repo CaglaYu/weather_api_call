@@ -5,10 +5,10 @@ import { makeStyles } from "@mui/styles";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-import Login from "./Components/login.component";
-import Register from "./Components/register.component";
-import Home from "./Components/home.component";
-import Profile from "./Components/profile.component";
+import Login from "./Components/Login";
+import Register from "./Components/Register";
+import Home from "./Components/Home";
+import Profile from "./Components/Profile";
 
 import { logout } from "./actions/auth";
 import { clearMessage } from "./actions/message";
@@ -33,14 +33,12 @@ import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import {SocialIcon}  from 'react-social-icons';
 import './Components/nav.css';
-import Main from './Components/Main';
-import Footer from './Components/Footer';
 import { Link as RouterLink } from "react-router-dom";
 import Link from "@mui/material/Link";
 
 const pages = ['Today', 'Hot Topics', 'Categories'];
 const settings1 = ['Account', 'Logout'];
-const settings2 = ['Login', 'SignUp'];
+const settings2 = ['Login', 'Register'];
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -82,21 +80,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
-const styles = {
-  addButton:  {
-    "&:hover": {
-      color: "#f88d13",
-      background: '#15584C',
-    },
-  },
-  addIcon: {
-    "&:hover": {
-      color: "#f88d13",
-      background: '#15584C',
-      
-    },
-  }
-};
+
 
 const App = () => {
   const { user: currentUser } = useSelector((state) => state.auth);
@@ -141,12 +125,6 @@ const App = () => {
   
   const useStyles = makeStyles({
     addButton: {
-      "&:hover": {
-        color: "#f88d13",
-        background: '#15584C',
-      },
-    },
-    addIcon: {
       "&:hover": {
         color: "#f88d13",
         background: '#15584C',
@@ -266,11 +244,12 @@ const App = () => {
 
 
 
-            
+           
           </div>
-          <Main />
-          <Footer />
-          <div className="container mt-3">
+       
+          
+          <div className="containerm">
+            
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route exact path="/home" element={<Home />} />
@@ -280,6 +259,7 @@ const App = () => {
       
             </Routes>
           </div>
+          
         </div>
       </CustomRouter>
     );
@@ -341,7 +321,8 @@ const App = () => {
         aria-haspopup="true"
       >
         <AccountCircleIcon className="accIcon"/>&nbsp;
-        <p 
+        <p  
+        
         style={{ my: 2, color: '#BAA89B', textDecoration: 'none', display: 'block',
         fontFamily: 'Poppins',fontWeight: 600,fontSize:"0.8rem",marginTop:'1em',textTransform:'lowercase'   }} >My Account </p>
       

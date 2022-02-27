@@ -9,13 +9,7 @@ class UserService {
     return api.get('/test/user');
   }
 
-  getModeratorBoard() {
-    return api.get('/test/mod');
-  }
-
-  getAdminBoard() {
-    return api.get('/test/admin');
-  }
+  
 }
 
 export default new UserService();
