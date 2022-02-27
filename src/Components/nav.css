@@ -44,9 +44,9 @@
     color: #15584C;
     margin: 0.01vw;
     font-size: 1.2rem;
-    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Poppins', sans-serif;
     
-    font-weight: 900;    
+    font-weight: 600;    
     margin-right: 0.2em;
 }
 
@@ -60,6 +60,8 @@
     margin-right: 0.4vw;
     
 }
+
+
 .flex {
     display: flex;
     flex-wrap: wrap;
@@ -77,7 +79,9 @@
     
   }
 
-
+.accIcon{
+    color: #BAA89B;
+}
 
  .searchgroup .main {
     display: flex;

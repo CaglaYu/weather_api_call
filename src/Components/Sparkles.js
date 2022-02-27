@@ -293,7 +293,7 @@ class Sparkle extends React.Component {
 Sparkle.defaultProps = {
   // The color of the sparkles. Can be a color, an array of colors,
   // or 'random' (which will randomly pick from all hex colors).
-  color: '#BAA89B',
+  color: '#FFFFFF', //'#BAA89B',
   // The number of sparkles to render. A large number could slow
   // down the page.
   count: 50,

@@ -57,8 +57,11 @@ const Search = styled('div')(({ theme }) => ({
       paddingLeft: `calc(1em + ${theme.spacing(4)})`,
       transition: theme.transitions.create('width'),
       width: '100%',
+      fontSize: '0.9rem',
+      fontFamily: 'Poppins',
+      fontWeight: '400',   
       [theme.breakpoints.up('sm')]: {
-        width: '12ch',
+        width: '10ch',
         '&:focus': {
           width: '20ch',
         },
@@ -195,7 +198,7 @@ const ResponsiveAppBar = () => {
                         sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
                         onClick={handleCloseNavMenu}
                         component={RouterLink} to={"/" + page}
-                        sx={{ my: 2, color: '#BAA89B', textDecoration: 'none', display: 'block',fontFamily: 'Nanum Gothic',fontWeight: 600,fontSize:"1rem"   }}
+                        sx={{ my: 2, color: '#BAA89B', textDecoration: 'none', display: 'block',fontFamily: 'Poppins',fontWeight: 400,fontSize:"1rem"   }}
                         className={classes.addButton} 
                         
                       >
@@ -254,10 +257,10 @@ const ResponsiveAppBar = () => {
                     <SearchIconWrapper>
                       <SearchIcon style={{ color: '#15584C'}} />
                     </SearchIconWrapper>
-                    <StyledInputBase
+                    <StyledInputBase 
                       
                       
-                      placeholder="Search…"
+                      placeholder="Search... "
                       inputProps={{ 'aria-label': 'search' }}
                     />
                   </Search>
