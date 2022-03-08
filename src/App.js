@@ -4,17 +4,16 @@ import { Router, Routes, Route } from "react-router-dom";
 import { makeStyles } from "@mui/styles";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-
+import AuthService from "./services/auth.service";
 import Login from "./Components/Login";
+import Logout from "./Components/Logout";
 import Register from "./Components/Register";
 import Home from "./Components/Home";
 import Profile from "./Components/Profile";
 
-import { logout } from "./actions/auth";
-import { clearMessage } from "./actions/message";
 
 import { history } from './helpers/history';
-
+import AuthVerify from "./common/AuthVerify";
 import EventBus from "./common/EventBus";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -83,19 +82,33 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 
 const App = () => {
-  const { user: currentUser } = useSelector((state) => state.auth);
+  const [currentUser, setCurrentUser] = useState(undefined);
   const dispatch = useDispatch();
  
   useEffect(() => {
-    history.listen((location) => {
-      dispatch(clearMessage()); // clear message when changing location
+    const user = AuthService.getCurrentUser();
+
+    if (user) {
+      setCurrentUser(user);
+
+    }
+
+    EventBus.on("logout", () => {
+      logOut();
     });
-  }, [dispatch]);
-  const logOut = useCallback(() => {
-    dispatch(logout());
-  }, [dispatch]);
-  
-  
+
+    return () => {
+      EventBus.remove("logout");
+    };
+  }, []);
+
+  const logOut = () => {
+    console.log("bakburada")
+    AuthService.logout();
+    setCurrentUser(undefined);
+  };
+
+    
   const CustomRouter = ({
     basename,
     children,
@@ -254,12 +267,14 @@ const App = () => {
               <Route exact path="/" element={<Home />} />
               <Route exact path="/home" element={<Home />} />
               <Route exact path="/login" element={<Login />} />
+              <Route exact path="/logout" element={<Logout />} />
+
               <Route exact path="/register" element={<Register />} />
               <Route exact path="/profile" element={<Profile />} />
       
             </Routes>
           </div>
-          
+          <AuthVerify logOut={this.logOut}/>
         </div>
       </CustomRouter>
     );
